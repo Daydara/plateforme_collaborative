@@ -1,0 +1,7 @@
+<h1> <%= full_name %> </h1>
+
+<p>
+  <% @user_products.each do |product| %>
+  <%= link_to product.name, product_path(product) %>
+<% end %>
+</p>
