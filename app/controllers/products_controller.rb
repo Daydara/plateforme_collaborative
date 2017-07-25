@@ -8,8 +8,9 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    #@products = Product.all
-    @products = policy_scope(Product).reverse
+    # @products = Product.all.page params[:page]
+    @products = policy_scope(Product)
+    @products = @products.order(updated_at: :desc).page(params[:page])
   end
 
   # GET /products/1
@@ -81,5 +82,5 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :category, :date, :activate)
+      params.require(:product).permit(:name, :description, :category, :date, :activate, :image)
     end

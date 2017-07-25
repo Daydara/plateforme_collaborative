@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  enum user_category: [:Grower, :Gardner, :Individual, :Professional]
+  enum user_category: [:grower, :gardner, :individual, :professional, :other]
 
 # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
