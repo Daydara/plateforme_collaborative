@@ -10,7 +10,15 @@ class ProductsController < ApplicationController
   def index
     # @products = Product.all.page params[:page]
     @products = policy_scope(Product)
+
     @products = @products.order(updated_at: :desc).page(params[:page])
+
+    search = params[:term].present? ? params[:term] : nil
+    @products = if search
+    Product.search(search)
+  else
+    Product.all
+  end
   end
 
   # GET /products/1

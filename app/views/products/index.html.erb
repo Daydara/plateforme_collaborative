@@ -1,10 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-
-<h1>Products</h1>
-
-<table class='table table-hover'>
+<!-- <table class='table table-hover'>
   <thead>
     <tr>
       <th>Image</th>
@@ -21,7 +16,7 @@
 
   <tbody>
     <% @products.each do |product| %>
-      <tr>
+      <tr class="annonce">
         <td><%= image_tag product.image.url(:thumb) %></td>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
@@ -36,9 +31,41 @@
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
 
- <%= paginate @products %>
+<!-- <% if !user_signed_in? %>
+ <div id="titreimg" class="jumbotron">
+   <h1>Plateform SCARP</h1>
+     <p> Tout ce dont vous avez besoin pour lutter conte le gaspillage efficacement </p>
+     <p><%= link_to "Rejoindre la commuanauté", new_user_registration_path, class: "btn primary-btn btn-lg" %></p>
+ </div>
+<% end %> -->
+
+<div class="container">
+  <div class="row">
+    <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+    </p>
+    <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    </p>
+  </div>
+  <% @products.each do |product| %>
+  <div class="row annonce">
+    <%= link_to 'Show', product %>
+    <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <%= image_tag product.image.url(:thumb) %>
+    </p>
+    <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <%= product.name %>
+    </p>
+    <p class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+      <%= product.user.first_name %>
+    </p>
+  </div>
+  <hr class="style18">
+  <% end %>
+</div>
+
+
 
 <br>
 

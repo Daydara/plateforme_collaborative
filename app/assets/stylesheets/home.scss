@@ -1,0 +1,36 @@
+html,body {
+  height: 100%
+}
+
+.backgroundimg {
+  background-color: #ffffff;
+  background: url(asset-path('/assets/table_vegetable.jpeg')) no-repeat;
+  background-size: cover;
+  font-family: Helvetica, Arial, sans-serif;
+  color:#FDF9F4;
+}
+
+#head {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#btn_join_us {
+  margin-top: 20px;
+}
+
+h1  {
+  text-shadow: 0px 0px 8px black ;
+  color: #5cb85c !important;
+  font-weight: bold !important;
+}
+
+.subtitle {
+  text-shadow: 0px 0px 8px black ;
+}
+
+.tagline {
+  text-shadow: 0px 0px 4px black ;
+
+}

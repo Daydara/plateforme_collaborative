@@ -1,33 +1,53 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
+<header>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to "Plateform_SCARP", root_path, class: "navbar-brand" %>
-    </div>
+    <div class="container">
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <% if user_signed_in? %>
-          <li><%= link_to "New product", new_product_path, class: "active" %> </li>
-          <li><%= link_to "Account", edit_user_registration_path %> </li>
-        <% else %>
-          <li><%= link_to "Sign Up", new_user_registration_path, class: "active" %> </li>
-          <li><%= link_to "Sign In", new_user_session_path, class: "active" %> </li>
-        <% end %>
-          </ul>
-      <form class="navbar-form navbar-right" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Plateforme</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Link</a></li>
+          <li><a href="#">A propos</a></li>
+          <li><a href="#">Contact</a></li>
+          <!-- <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+          <li><a href="#">Action</a></li>
+          <li><a href="#">Another action</a></li>
+          <li><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li><a href="#">Separated link</a></li>
+          <li class="divider"></li>
+          <li><a href="#">One more separated link</a></li>
+        </ul>
+      </li> -->
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>
+        <form class="navbar-form" url="<%=products_path%>" method="get" role="search">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search" name="q">
+          <div class="input-group-btn">
+            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+          </div>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+      </li>
+        <li class="btn_sign_in_and_out"><%= link_to "Sign In", new_user_session_path, class: "active" %> </li>
+        <li class="btn_sign_in_and_out"><%= link_to "Sign Up", new_user_registration_path, class: "active" %> </li>
+      <!--<button class="btn btn-warning"><%= link_to "Logout", destroy_user_session_path, method: :delete %></button> -->
+        <li id="btn_logout"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+    </ul>
+</div>
+</div><!-- /.navbar-collapse -->
 </nav>
+</header>

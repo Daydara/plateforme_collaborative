@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>
 
 <%= image_tag @product.image.url(:thumb) %>
 
@@ -26,6 +26,46 @@
   <strong>Activate:</strong>
   <%= @product.activate %>
 </p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %> -->
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-4">
+        <%= image_tag @product.image.url(:medium) %>
+        <div class="table-responsive">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><strong>Name:</strong></td>
+                <td><%= @product.name %></td>
+              </tr>
+              <tr>
+                <td> <strong>Description:</strong></td>
+                <td><%= @product.description %></td>
+              </tr>
+              <tr>
+                <td><strong>Category:</strong></td>
+                <td><%= @product.category %></td>
+              </tr>
+              <tr>
+                <td><strong>Date:</strong></td>
+                <td> <%= @product.date %></td>
+              </tr>
+              <tr>
+                <td><strong>Activate:</strong></td>
+                <td><%= @product.activate %></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

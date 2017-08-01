@@ -13,5 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require jquery.fittext
+//= require jquery.lettering
+//= require jquery.textillate
 //= require turbolinks
 //= require_tree .

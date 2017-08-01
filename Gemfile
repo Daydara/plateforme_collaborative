@@ -65,3 +65,7 @@ gem 'rmagick'
 gem "paperclip", "~> 5.0.0"
 
 gem 'kaminari'
+
+gem 'searchkick'
+
+gem 'textillate'

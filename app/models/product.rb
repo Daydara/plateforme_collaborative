@@ -10,4 +10,12 @@ class Product < ApplicationRecord
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 
+  searchkick word_start: [:name]
+
+  def search_data
+    {
+      name: name,
+    }
+  end
+
 end
